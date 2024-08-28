@@ -21,11 +21,11 @@ let currentTurn = 'white';
 function getChessPiece(piece, coords) {
   if (!firstSelection) {
     if (checkWhoMoves(mainBoard, coords[0], coords[1])[0]) {
-      firstSelection = document.querySelector(`.js-${piece}-button`);
-      firstSelection.classList.add('js-button-clicked-styles');
-    
-      // координаты первой кнопки
-      firstCoords = coords;
+        firstSelection = document.querySelector(`.js-${piece}-button`);
+        firstSelection.classList.add('js-button-clicked-styles');
+      
+        // координаты первой кнопки
+        firstCoords = coords;
     } else {
       alert('Не ваш ход!');
     }
@@ -33,8 +33,6 @@ function getChessPiece(piece, coords) {
   } else {
     // координаты второй кнопки
     secondCoords = coords;
-
-    console.log(mainBoard);
 
     if (checkForEmptyPiece(mainBoard, firstCoords[0], firstCoords[1])) {
       if (checkTheMove(mainBoard, firstCoords[0], firstCoords[1], secondCoords[0], secondCoords[1])) {
